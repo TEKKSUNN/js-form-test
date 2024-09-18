@@ -3,5 +3,24 @@
     "setup": "npm init && npm i -D webpack webpack-cli css-loader style-loader html-loader html-webpack-plugin webpack-dev-server && npm init @eslint/config@latest && npm i --save-dev --save-exact prettier",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --config webpack.dev.js"
+  },
+  "name": "js-form-test",
+  "version": "1.0.0",
+  "description": "A website that tests the Constraint Validation API.",
+  "main": "./src/index.js",
+  "author": "TEKKSUNN <emmanuelleutecson@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.0",
+    "prettier": "3.3.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
   }
 }
