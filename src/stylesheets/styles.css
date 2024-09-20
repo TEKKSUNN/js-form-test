@@ -1,0 +1,125 @@
+:root {
+  --pad-normal: 8px 16px;
+  --pad-big: 16px 32px;
+  --rad-normal: 8px;
+  --rad-big: 16px;
+  --input-size: 24px;
+  --submit-size: calc(var(--input-size) + 4px);
+  --text-color: #2C3E50;
+}
+
+* {
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: auto;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 16px;
+  grid-template-areas:
+    ". . ."
+    ". form ."
+    ". hint .";
+}
+
+form {
+  background-color: #F0F8FF;
+  padding: var(--pad-big);
+  border-radius: var(--rad-big);
+  grid-area: form;
+  box-shadow: 5px 5px 10px #2C3E5025;
+}
+
+button[type="submit"] {
+  align-self: center;
+  padding: var(--pad-normal);
+  border-radius: var(--rad-normal);
+  font-size: var(--submit-size);
+  background-color: #FF6F61;
+  border: 0;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px #00000010;
+  box-shadow: 0 0 5px #2C3E5025;
+}
+
+button[type="submit"]:hover {
+  opacity: 90%;
+}
+
+.input-field {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  color: var(--text-color);
+  position: relative;
+  border-radius: 5px 10px 20px 40px;
+}
+
+.input-field > label {
+  font-size: var(--input-size);
+  text-align: end;
+  text-wrap: nowrap;
+  text-shadow: 1px 1px 2px #2C3E5010;
+}
+
+.input-field > input {
+  font-size: var(--input-size);
+  border: 0;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+.input-field > input:focus {
+  outline: none;
+}
+
+.hint {
+  grid-area: hint;
+  color: #00000075;
+  text-shadow: 1px 1px 2px #2C3E5025;
+}
+
+.form-field {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: var(--pad-big);
+  border-radius: var(--rad-big);
+  box-shadow: 0 0 5px #2C3E5025;
+}
+
+input + .input-hint {
+  display: block;
+  position: absolute;
+  right: -10px;
+}
+
+input:required + .input-hint::before {
+  content: "*";
+  font-size: 14px;
+  color: #FF6F61;
+}
+
+input:invalid {
+  background-color: #FF6F6125;
+  border-bottom: 1px solid #FF6F61;
+}
+
+input:valid {
+  background-color: #ebffef;
+  border-radius: 10px 10px 0 0;
+}
+
+input:valid + .input-hint::before {
+  content: " ";
+}
