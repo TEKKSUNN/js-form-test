@@ -110,14 +110,17 @@ input:required + .input-hint::before {
   color: #FF6F61;
 }
 
-input:invalid {
+input:invalid,
+.actual-invalid {
   background-color: #FF6F6125;
   border-bottom: 1px solid #FF6F61;
 }
 
-input:valid {
+input:valid,
+.actual-valid {
   background-color: #ebffef;
   border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid black;
 }
 
 input:valid + .input-hint::before {
