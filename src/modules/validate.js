@@ -4,6 +4,8 @@ import checkPassword,
   { getPassword } from "./password";
 import checkEmail,
   { getEmail } from "./email";
+import checkAge,
+  { getAge } from "./age";
 import { showError, stopDefault } from "./helpers";
 
 export default function validateForm() {
@@ -12,6 +14,7 @@ export default function validateForm() {
   validate(getLastName(), checkName);
   validate(getPassword(), checkPassword);
   validate(getEmail(), checkEmail);
+  validate(getAge(), checkAge);
 }
 
 export const showNoValueMsg = (element) => {
