@@ -1,4 +1,5 @@
 import { getInput, showError, showNoError } from "./helpers";
+import { showNoValueMsg } from "./validate";
 
 export default function checkName(e) {
   const target = e.target;
@@ -6,7 +7,7 @@ export default function checkName(e) {
   const check = value.match(pattern);
   const errorMsg = (msg) => { showError(target, msg) };
   if (value === "") {
-    errorMsg("You can't leave this shit empty.")
+    showNoValueMsg(target);
     return;
   } else if (value.length > maxlength) {
     errorMsg("Name is too long. Must be shorter than or equal to 20.");
