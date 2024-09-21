@@ -4,8 +4,8 @@ import { stopSubmit } from "./helpers";
 
 export default function validateForm() {
   getForm().addEventListener("submit", stopSubmit);
-  getFirstName().addEventListener("focusout", checkName);
-  getLastName().addEventListener("focusout", checkName);
+  getFirstName().addEventListener("input", checkName);
+  getLastName().addEventListener("input", checkName);
 }
 
 const getForm = () => document.querySelector("form");
