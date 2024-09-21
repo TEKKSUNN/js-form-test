@@ -2,10 +2,10 @@ import checkName,
   { getFirstName, getLastName } from "./names";
 import checkPassword,
   { getPassword } from "./password";
-import { showError, stopSubmit } from "./helpers";
+import { showError, stopDefault } from "./helpers";
 
 export default function validateForm() {
-  getForm().addEventListener("submit", stopSubmit);
+  getForm().addEventListener("submit", stopDefault);
   validate(getFirstName(), checkName);
   validate(getLastName(), checkName);
   validate(getPassword(), checkPassword);

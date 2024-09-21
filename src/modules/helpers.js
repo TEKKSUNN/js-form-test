@@ -1,4 +1,4 @@
-export const stopSubmit = (e) => { e.preventDefault() };
+export const stopDefault = (e) => { e.preventDefault() };
 export const getInput = (query) => document.getElementById(query);
 export const showError = (element, message) => {
   element.setCustomValidity(message);
