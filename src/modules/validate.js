@@ -5,7 +5,7 @@ import checkPassword,
 import { showError, stopDefault } from "./helpers";
 
 export default function validateForm() {
-  getForm().addEventListener("submit", stopDefault);
+  stopSubmit(getForm());
   validate(getFirstName(), checkName);
   validate(getLastName(), checkName);
   validate(getPassword(), checkPassword);
@@ -13,6 +13,10 @@ export default function validateForm() {
 
 export const showNoValueMsg = (element) => {
   showError(element, "You can't leave this empty.");
+}
+
+export const stopSubmit = (HTMLFormElement) => {
+  HTMLFormElement.addEventListener("submit", stopDefault);
 }
 
 const getForm = () => document.querySelector("form");
